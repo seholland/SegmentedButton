@@ -15,6 +15,7 @@
  */
 package co.ceryle.segmentedbutton;
 
+import androidx.core.content.ContextCompat;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -31,7 +32,6 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -505,7 +505,7 @@ public class SegmentedButton extends View {
      * @param location is .ttf file's path in assets folder. Example: 'fonts/my_font.ttf'
      */
     public void setTypeface(String location) {
-        if (null != location && !location.equals("")) {
+        if (null != location && !location.isEmpty()) {
             Typeface typeface = Typeface.createFromAsset(getContext().getAssets(), location);
             mTextPaint.setTypeface(typeface);
         }
